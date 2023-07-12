@@ -55,10 +55,6 @@ const doubleNumbers2 = async (arrNumbers) => {
   return results;
 };
 
-  const oddNumbers = (arrNumbers) => {
-    return arrNumbers.filter((number) => number % 2 !== 0); //Filter ==>  Selects elements based on a given condition.
-  };
-  
   
 const oddNumbers2 = async (arrNumbers) => {
   const oddNumbers = await Promise.resolve(arrNumbers.filter((number) => {
@@ -101,6 +97,30 @@ const  sumOfDivisibleByThree22  = await sumOfDivisibleByThree2(numberAarr);
 
 result();
 
+
+
+
+const uniqueNumbers3 = (arrNumbers) =>
+  [...new Set(arrNumbers)].reverse();
+
+const doubleNumbers3 = (arrNumbers) =>
+  arrNumbers.map((number) => number * 2);
+
+const oddNumbers3 = (arrNumbers) =>
+  arrNumbers.filter((number) => number % 2 !== 0);
+
+const sumOfNumbers3 = (arrNumbers) =>
+  arrNumbers.reduce((sum, number) => sum + number, 0);
+
+const sumOfDivisibleByThree3 = (arrNumbers) =>
+  arrNumbers.filter((number) => number % 3 === 0)
+    .reduce((sum, number) => sum + number, 0);
+
+console.log("Normal3 uniqueNumbers", uniqueNumbers3(numberAarr));
+console.log("Normal3 doubleNumbers", doubleNumbers3(numberAarr));
+console.log("Normal3 oddNumbers", oddNumbers3(numberAarr));
+console.log("Normal3 sumOfNumbers", sumOfNumbers3(numberAarr));
+console.log("Normal3 sumOfDivisibleByThree", sumOfDivisibleByThree3(numberAarr));
 
  app.get("/ping", (req, res) => {
     res.send("pong");
